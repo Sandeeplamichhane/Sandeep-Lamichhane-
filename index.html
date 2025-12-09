@@ -1,14 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  
-  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Virustesla - Sandeep Lamichhane" />
   <title>virustesla</title>
-  
-  
+
   <!-- OpenGraph / social preview (edit the image path if needed) -->
   <meta property="og:title" content="virustesla — Sandeep Lamichhane">
   <meta property="og:description" content="NOT CUTTING MY HAIR until Real Madrid wins the Champions League — daily updates on Instagram">
@@ -89,33 +86,31 @@
         </div>
         <div class="challenge" style="margin-top:12px">
           <a id="insta-challenge" href="https://instagram.com/virustesla" target="_blank" rel="noopener" aria-label="Open insta challenge">Click to watch • <span id="day-counter">Today is day 20</span></a>
-          <small id="day-note">(Daily updates on Instagram)</small>
+          <small id="day-note">( updates on Instagram)</small>
         </div>
-        <div style="margin-top:10px;color:var(--muted)">Email: <a href="mailto:hello@virustesla.com" target="_blank">hellovirustesla@gmail.com</a></div>
+        <div style="margin-top:10px;color:var(--muted)">Email: <a href="mailto:hello@virustesla.com" target="_blank">hello@virustesla.com</a></div>
       </div>
     </header>
     <div class="grid">
       <section class="card">
-        <h2 style="margin-top:0"></h2>
-        <p id="about-public" style="color:var(--muted)"></p>
+        <!-- <h2 style="margin-top:0">About the Challenge</h2> -->
+        <!-- <p id="about-public" style="color:var(--muted)">Challenge details are hidden from public view. Use the "Show Challenge" button (top-right) if you are the admin.</p> -->
         <h3 style="margin-top:12px">Projects</h3>
         <div class="projects">
-          <div class="mysterious">Mysterious — Coming Soon</div>
+          <div class="mysterious">Mysterious — Coming Soon</div>  
         </div>
       </section>
       <aside class="card">
         <h3 style="margin-top:0"></h3>
-        <p style="color:var(--muted)"></p>
+       <!-- <p style="color:var(--muted)">Daily clips, match reactions, and the hair challenge — all on Instagram.</p> ### -->
         <div style="margin-top:8px">
-          <a href="https://instagram.com/virustesla" target="_blank" rel="noopener">Open Instagram</a>
+          <a href="https://instagram.com/virustesla" target="_blank" rel="noopener"></a>
         </div>
         <hr style="opacity:0.06;margin:14px 0">
-        <small style="color:var(--muted)">Find me on instagram: <a href="https://instagram.com/virustesla" target="_blank" rel="noopener">@virustesla</a></small>
+        <small style="color:var(--muted)">Find me on insta: <a href="https://instagram.com/virustesla" target="_blank" rel="noopener">virustesla</a></small>
       </aside>
     </div>
-    <footer>
-      <div style="color:var(--muted)">Made with 🤍 — ©virustesla 2026 <span id="year"></span></div>
-    </footer>
+    
   </main>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -135,5 +130,106 @@
     document.getElementById('challenge-line').addEventListener('click', function(){ window.open('https://instagram.com/virustesla','_blank'); });
     document.getElementById('challenge-line').addEventListener('keypress', function(e){ if(e.key==='Enter') window.open('https://instagram.com/virustesla','_blank'); });
   </script>
+  <footer> <!-- Education Section -->
+<section id="education" style="padding: 60px 20px; background-color: #f9f9f9;">
+  <div style="max-width: 900px; margin: auto;">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px;">Education</h2>
+    
+    <div class="timeline">
+      <!-- Education Item -->
+      <div class="timeline-item">
+        <div class="timeline-year">2025 - </div>
+        <div class="timeline-content">
+          <h3>Bsc.csit running</Bsc></h3>
+          <p>Tribhuvan University</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-year">2021 - 2023</div>
+        <div class="timeline-content">
+          <h3>+2 Science</h3>
+          <p>Pokhara</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-year">2015 - 2021</div>
+        <div class="timeline-content">
+          <h3>High School</h3>
+          <p>Baglung</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #3498db;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-year {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #147a5c;
+}
+
+.timeline-content {
+  background: rgb(74, 89, 138);
+  padding: 15px 20px;
+  border-radius: 8px;   
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+}
+</style>
+<footer>
+      <div style="color:var(--muted)">Made with 🤍 — © virustesla <span id="year"></span></div>
+    </footer>
+</footer>
 </body>
 </html>
