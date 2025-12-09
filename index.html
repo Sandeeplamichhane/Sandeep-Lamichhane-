@@ -1,58 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>virustesla</title>
-<!-- Favicon-->
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Font Awesome icons (free version)-->
-<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-<!-- Google fonts-->
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-<!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/styles.css" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Virustesla - Sandeep Lamichhane" />
+  <title>virustesla</title>
+
+  <!-- OpenGraph / social preview (edit the image path if needed) -->
+  <meta property="og:title" content="virustesla — Sandeep Lamichhane">
+  <meta property="og:description" content="NOT CUTTING MY HAIR until Real Madrid wins the Champions League — daily updates on Instagram">
+  <meta property="og:image" content="assets/avatar.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9b6f7f1.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root{--bg:#030307;--muted:#9aa4b2;--accent:#00d4ff;--glass:rgba(255,255,255,0.03);--glow:0 8px 40px rgba(0,212,255,0.06)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Lato',system-ui,Arial;background:radial-gradient(800px 400px at 10% 10%, rgba(0,212,255,0.03), transparent),var(--bg);color:#e6eef6}
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px}
+
+    /* HERO */
+    .hero{position:relative;display:flex;align-items:center;gap:18px;padding:28px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.02);overflow:visible}
+
+    .avatar-stage{width:220px;height:220px;border-radius:18px;position:relative;flex:0 0 220px}
+    .orbiter{position:absolute;inset:0;border-radius:18px;pointer-events:none}
+
+    .orb{position:absolute;left:50%;top:50%;transform-origin:center;}
+    .orb img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.06);box-shadow:var(--glow);background:#021322}
+
+    .o-slow{width:100px;height:100px;margin-left:-50px;margin-top:-50px;animation:orbit-slow 26s linear infinite}
+    .o-med{width:100px;height:100px;margin-left:-50px;margin-top:-50px;animation:orbit-med 16s linear infinite}
+    .o-fast{width:100px;height:100px;margin-left:-50px;margin-top:-50px;animation:orbit-fast 9s linear infinite}
+
+    @keyframes orbit-slow{0%{transform:rotate(0) translateX(-140px) rotate(0)}50%{transform:rotate(180deg) translateX(140px) rotate(-180deg)}100%{transform:rotate(360deg) translateX(-140px) rotate(-360deg)}}
+    @keyframes orbit-med{0%{transform:rotate(0) translate(90px,-60px) rotate(0)}50%{transform:rotate(180deg) translate(-90px,60px) rotate(-180deg)}100%{transform:rotate(360deg) translate(90px,-60px) rotate(-360deg)}}
+    @keyframes orbit-fast{0%{transform:rotate(0) translate(-40px,120px) rotate(0)}50%{transform:rotate(180deg) translate(40px,-120px) rotate(-180deg)}100%{transform:rotate(360deg) translate(-40px,120px) rotate(-360deg)}}
+
+    .hero{animation:floaty .9s ease-in-out infinite alternate}
+    @keyframes floaty{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+
+    .title{font-family:'Montserrat';font-size:1.6rem;margin:0}
+    .highlight{display:inline-block;background:linear-gradient(90deg, rgba(0,212,255,0.08), rgba(0,163,255,0.04));padding:8px 12px;border-radius:12px;margin-top:8px;border:1px solid rgba(0,212,255,0.12);box-shadow:0 6px 30px rgba(0,212,255,0.03)}
+    .pulse{animation:pulse 2.2s ease-in-out infinite}
+    @keyframes pulse{0%{box-shadow:0 6px 26px rgba(0,212,255,0.03)}50%{box-shadow:0 18px 60px rgba(0,212,255,0.08)}100%{box-shadow:0 6px 26px rgba(0,212,255,0.03)}}
+
+    .challenge{margin-top:12px}
+    .challenge a{color:#fff;font-weight:800;text-decoration:none}
+    .challenge small{display:block;color:var(--muted);margin-top:6px}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .projects .mysterious{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(0,0,0,0.2), rgba(255,255,255,0.01));cursor:default;transition:transform .28s ease, box-shadow .28s ease}
+    .projects .mysterious:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+
+    footer{margin-top:22px;text-align:center;color:var(--muted)}
+    .socials a{margin-right:10px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}.avatar-stage{display:none}}
+  </style>
 </head>
-<body id="page-top">
-<body style=background-color:black;"
-<!-- Masthead-->
-<header class="masthead bg-primary text-white text-center">
-<div class="container d-flex align-items-center flex-column">
-
-
-
-
-
-<!-- Masthead Avatar Image-->
-
-
-
-
-
-<center> <img src="null" width="185" height="185"> </center>
-<!-- Masthead Heading--> <center> <em> <h2 style="color:blue;"> Sandeep Lamichhane </h2> </center> <em>
-<!-- Masthead Subheading--> <center> <h3 style="color:white;" width="15" height="10"></h2> </center>
-<nav><center>   
-            <a style=height="100" width="100" target="_blank" href="http://facebook.com/virustesla"><i class="fab fa-facebook-f"></i></a>
-             <a target="_blank" href="http://instagram.com/virustesla" ><i class="fab fa-instagram"></i></a> </center>
- </nav> </div>
-</header>
-            
-<!-- Copyright Section-->
-<div class="copyright py-4 text-center text-white">
-<center> <div style="color:red;"><small> </small></div> </center>
-</div>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<body>
+  <main class="wrap">
+    <header class="hero" role="banner">
+      <div class="avatar-stage" aria-hidden="false">
+        <div class="orbiter" aria-hidden="true">
+          <div class="orb o-slow" style="z-index:1;opacity:0.85">
+            <img src="assets/avatar.jpg" alt="Sandeep avatar" onerror="this.src='https://via.placeholder.com/100?text=V'">
+          </div>
+          <div class="orb o-med" style="z-index:2;opacity:0.95">
+            <img src="assets/avatar.jpg" alt="Sandeep avatar" onerror="this.src='https://via.placeholder.com/100?text=V'">
+          </div>
+          <div class="orb o-fast" style="z-index:3;opacity:1">
+            <img src="assets/avatar.jpg" alt="Sandeep avatar" onerror="this.src='https://via.placeholder.com/100?text=V'">
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="title">Sandeep Lamichhane</h1>
+        <div class="highlight pulse" aria-hidden="false">
+          <strong id="challenge-line">NOT CUTTING MY HAIR until <span style="color:var(--accent);">Real Madrid</span> wins the Champions League</strong>
+        </div>
+        <div class="challenge" style="margin-top:12px">
+          <a id="insta-challenge" href="https://instagram.com/virustesla" target="_blank" rel="noopener" aria-label="Open insta challenge">Click to watch • <span id="day-counter">Today is day 20</span></a>
+          <small id="day-note">(Daily updates on Instagram)</small>
+        </div>
+        <div style="margin-top:10px;color:var(--muted)">Email: <a href="mailto:hello@virustesla.com" target="_blank">hello@virustesla.com</a></div>
+      </div>
+    </header>
+    <div class="grid">
+      <section class="card">
+        <h2 style="margin-top:0">About the Challenge</h2>
+        <p id="about-public" style="color:var(--muted)"></p>
+        <h3 style="margin-top:12px">Projects</h3>
+        <div class="projects">
+          <div class="mysterious">Mysterious — Coming Soon</div>
+        </div>
+      </section>
+      <aside class="card">
+        <h3 style="margin-top:0">Follow</h3>
+        <p style="color:var(--muted)">Daily clips, match reactions, and the hair challenge — all on Instagram.</p>
+        <div style="margin-top:8px">
+          <a href="https://instagram.com/virustesla" target="_blank" rel="noopener">Open Instagram</a>
+        </div>
+        <hr style="opacity:0.06;margin:14px 0">
+        <small style="color:var(--muted)">Find me on instagram: <a href="https://instagram.com/virustesla" target="_blank" rel="noopener">@virustesla</a></small>
+      </aside>
+    </div>
+    <footer>
+      <div style="color:var(--muted)">Made with vibes — © <span id="year"></span></div>
+    </footer>
+  </main>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const challengeStart = new Date('2025-11-20T00:00:00Z');
+    function computeDayCount(){
+      const now = new Date();
+      const diff = Math.floor((Date.UTC(now.getFullYear(),now.getMonth(),now.getDate()) - Date.UTC(challengeStart.getFullYear(),challengeStart.getMonth(),challengeStart.getDate()))/ (1000*60*60*24));
+      return diff + 1;
+    }
+    function updateCounter(){
+      const day = computeDayCount();
+      document.getElementById('day-counter').textContent = 'Today is day ' + day;
+    }
+    updateCounter();
+    setInterval(updateCounter,30000);
+    document.getElementById('challenge-line').style.cursor = 'pointer';
+    document.getElementById('challenge-line').addEventListener('click', function(){ window.open('https://instagram.com/virustesla','_blank'); });
+    document.getElementById('challenge-line').addEventListener('keypress', function(e){ if(e.key==='Enter') window.open('https://instagram.com/virustesla','_blank'); });
+  </script>
 </body>
 </html>
