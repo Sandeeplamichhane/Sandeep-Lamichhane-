@@ -6,19 +6,37 @@
 <title>Virustesla - Sandeep Lamichhane</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  
 :root { --bg:#030307; --muted:#9aa4b2; --accent:#00d4ff; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { font-family:'Lato',Arial,sans-serif; background:var(--bg); color:#e6eef6; overflow-x:hidden; position:relative; }
+
+/* Welcome Text */
+#welcome-text {
+  position:fixed;
+  top:50%; left:50%;
+  transform:translate(-50%, -50%) scale(0);
+  font-family:'Montserrat', sans-serif;
+  font-size:4rem; font-weight:900;
+  color:white; text-align:center; z-index:10000; display:none;
+}
+@keyframes welcomeAnim {
+  0% { transform:translate(-50%, -50%) scale(0); opacity:0; }
+  50% { transform:translate(-50%, -50%) scale(1.3); opacity:1; }
+  100% { transform:translate(-50%, -50%) scale(1); opacity:1; }
+}
+
+/* Wrap */
 .wrap { max-width:1100px; margin:28px auto; padding:20px; }
 
 /* HERO / Challenge Top */
-.hero { display:flex; align-items:center; gap:18px; padding:28px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.02); }
-.hero img { width:220px; border-radius:18px; }
+.hero { display:flex; align-items:center; gap:18px; padding:28px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.02); animation:heroEntrance 1.5s ease-out forwards; opacity:0; }
+.avatar-stage img { width:220px; border-radius:18px; transform: scale(0); animation:avatarEntrance 1.5s forwards; }
 .title { font-family:'Montserrat'; font-size:1.6rem; margin:0; }
 .highlight { display:inline-block; background:linear-gradient(90deg, rgba(0,212,255,0.08), rgba(0,163,255,0.04)); padding:8px 12px; border-radius:12px; margin-top:8px; border:1px solid rgba(0,212,255,0.12); }
 .pulse { animation:pulse 2.2s ease-in-out infinite; }
 @keyframes pulse {0%,100%{box-shadow:0 6px 26px rgba(0,212,255,0.03)}50%{box-shadow:0 18px 60px rgba(0,212,255,0.08)}}
+@keyframes avatarEntrance {0%{transform:scale(0);opacity:0;}50%{transform:scale(1.2);opacity:1;}100%{transform:scale(1);opacity:1;}}
+@keyframes heroEntrance {0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
 
 /* Education Timeline */
 .timeline { position:relative; margin:0; padding:0; }
@@ -42,22 +60,26 @@ body { font-family:'Lato',Arial,sans-serif; background:var(--bg); color:#e6eef6;
 /* Blast / Magic Viruses / Hearts / Confetti / Sparkles */
 #blast-container { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; display:none; z-index:9999; overflow:hidden; }
 .blast-circle { position:absolute; border-radius:50%; background:radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%); opacity:0.7; animation:blastAnim 6s ease-out forwards; }
-@keyframes blastAnim {0%{transform:scale(0); opacity:1;}100%{transform:scale(10); opacity:0;}}
-.magic-virus { position:absolute; width:20px; height:20px; background:#e74c3c; border-radius:50%; animation:fall infinite linear; }
+@keyframes blastAnim {0%{transform:scale(0);opacity:1;}100%{transform:scale(10);opacity:0;}}
+.magic-virus { position:absolute; width:20px; height:20px; border-radius:50%; animation:fall infinite linear; }
 @keyframes fall {0%{top:-20px;}100%{top:100vh;}}
-.heart { position:absolute; width:20px; height:20px; background:red; clip-path:polygon(50% 0%, 61% 10%, 70% 20%, 80% 40%, 50% 100%, 20% 40%, 30% 20%, 39% 10%); animation:heartFloat 6s ease-out forwards; }
-@keyframes heartFloat {0%{opacity:1; transform:translateY(0) scale(0.5) rotate(0deg);}100%{opacity:0; transform:translateY(400px) scale(1) rotate(360deg);}}
+.heart { position:absolute; width:20px; height:20px; background:red; clip-path:polygon(50% 0%,61% 10%,70% 20%,80% 40%,50% 100%,20% 40%,30% 20%,39% 10%); animation:heartFloat 6s ease-out forwards; }
+@keyframes heartFloat {0%{opacity:1; transform:translateY(0) scale(0.5) rotate(0deg);}100%{opacity:0; transform:translateY(400px) scale(1) rotate(360deg);} }
 .confetti { position:absolute; width:10px; height:10px; background:yellow; clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%); animation:fall 6s linear forwards; }
 .sparkle { position:absolute; width:5px; height:5px; background:white; border-radius:50%; animation:sparkleFloat 6s linear forwards; }
 @keyframes sparkleFloat {0%{opacity:1; transform:translateY(0);}100%{opacity:0; transform:translateY(400px);}}
 
+/* VIRUSTESLA cinematic text */
 #virustesla-text { position:fixed; top:40%; left:50%; transform:translate(-50%, -50%) scale(0); font-family:'Montserrat'; font-size:5rem; font-weight:900; display:none; z-index:10000; text-align:center; animation:none; }
+@media(max-width:768px){ #virustesla-text{font-size:3rem;} }
 
 footer { margin-top:22px; text-align:center; color:var(--muted); }
-
 </style>
 </head>
 <body>
+
+<!-- Welcome Text -->
+<div id="welcome-text">WELCOME TO <span style="color:#00d4ff;">VIRUSTESLA</span></div>
 
 <!-- HERO -->
 <main class="wrap">
@@ -70,7 +92,6 @@ footer { margin-top:22px; text-align:center; color:var(--muted); }
     <div class="highlight pulse" id="challenge-line">NOT CUTTING MY HAIR until <span style="color:var(--accent)">Real Madrid</span> wins the Champions League</div>
     <div class="challenge">
       <a id="insta-challenge" href="https://instagram.com/virustesla" target="_blank">Click to watch • <span id="day-counter">Today is day 20</span></a>
-      <!-- <small></small> -->
     </div>
     <div style="margin-top:10px;color:var(--muted)">Email: <a href="mailto:hellovirustesla@gmail.com">hellovirustesla@gmail.com</a></div>
   </div>
@@ -118,11 +139,40 @@ function computeDayCount(){return Math.floor((Date.UTC(new Date().getFullYear(),
 function updateCounter(){document.getElementById('day-counter').textContent='Today is day '+computeDayCount();}
 updateCounter(); setInterval(updateCounter,30000);
 
+// Initial hide main content
+const mainContent = document.querySelector('main');
+const education = document.getElementById('education');
+const colorSection = document.getElementById('color-boxes-section');
+const scrollHint = document.getElementById('scroll-hint');
+const footer = document.querySelector('footer');
+mainContent.style.display='none';
+education.style.display='none';
+colorSection.style.display='none';
+scrollHint.style.display='none';
+footer.style.display='none';
+
+// Welcome Animation
+window.addEventListener('load', ()=>{
+  const welcome = document.getElementById('welcome-text');
+  welcome.style.display='block';
+  welcome.style.animation='welcomeAnim 3s forwards';
+  setTimeout(()=>{
+    welcome.style.display='none';
+    mainContent.style.display='block';
+    education.style.display='block';
+    colorSection.style.display='block';
+    scrollHint.style.display='block';
+    footer.style.display='block';
+  }, 3000);
+});
+
 // Magic viruses constantly falling
 function createMagicVirus(){
   const v = document.createElement('div');
   v.classList.add('magic-virus');
   v.style.left = Math.random()*100+'vw';
+  const colors = ['#e74c3c','#3498db','#2ecc71','#f1c40f','#9b59b6','#e67e22'];
+  v.style.background = colors[Math.floor(Math.random()*colors.length)];
   v.style.animationDuration = (4+Math.random()*4)+'s';
   document.body.appendChild(v);
   setTimeout(()=>v.remove(),8000);
@@ -152,33 +202,27 @@ boxes.forEach(box=>{
     box.style.background = newColor;
     box.dataset.color = newColor;
     colorBar.style.background = newColor;
-    colorBar.textContent = '⬇ Click a box to change color ⬇: ';
-    // <div id="scroll-hint">⬇ Match the colors ⬇</div>
-
-    if([...boxes].every(b=>b.dataset.color===newColor)){
-      triggerCelebration();
-    }
+    colorBar.textContent = '⬇ Click a box to change color ⬇';
+    if([...boxes].every(b=>b.dataset.color===newColor)){ triggerCelebration(); }
   });
 });
 
 function triggerCelebration(){
   celebrationSound.currentTime=0; celebrationSound.play();
-  document.querySelector('.hero').style.display='none';
-  document.getElementById('education').style.display='none';
-  document.getElementById('color-boxes-section').style.display='none';
-  document.getElementById('scroll-hint').style.display='none';
-  document.querySelector('footer').style.display='none';
+  mainContent.style.display='none';
+  education.style.display='none';
+  colorSection.style.display='none';
+  scrollHint.style.display='none';
+  footer.style.display='none';
 
   blastContainer.style.display='block';
 
-  // Blast + Hearts + Confetti
   for(let i=0;i<40;i++){
     const c=document.createElement('div'); c.classList.add('blast-circle');
     c.style.left=Math.random()*100+'vw'; c.style.top=Math.random()*100+'vh';
     c.style.width=c.style.height=(20+Math.random()*50)+'px';
     c.style.animationDuration=(6+Math.random()*1)+'s';
-    blastContainer.appendChild(c);
-    setTimeout(()=>c.remove(),7000);
+    blastContainer.appendChild(c); setTimeout(()=>c.remove(),7000);
   }
   for(let i=0;i<30;i++){
     const h=document.createElement('div'); h.classList.add('heart');
@@ -205,11 +249,11 @@ function triggerCelebration(){
 
   setTimeout(()=>{
     virusteslaText.style.display='none';
-    document.querySelector('.hero').style.display='flex';
-    document.getElementById('education').style.display='block';
-    document.getElementById('color-boxes-section').style.display='block';
-    document.getElementById('scroll-hint').style.display='block';
-    document.querySelector('footer').style.display='block';
+    mainContent.style.display='block';
+    education.style.display='block';
+    colorSection.style.display='block';
+    scrollHint.style.display='block';
+    footer.style.display='block';
     randomizeBoxes();
   },9500);
 }
