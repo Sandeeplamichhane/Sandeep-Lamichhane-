@@ -1,11 +1,78 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>virustesla</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<Center><h1> COMMING SOON </h1></Center>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<footer>
-  <a href="https://instagram.com/virustesla" target="_blank">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-</footer>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #0f0f0f;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
 
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ff0057, #00f7ff, #ffea00, #ff0057);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: colorMove 6s linear infinite;
+            margin: 0;
+        }
 
+        @keyframes colorMove {
+            0% { background-position: 0% }
+            100% { background-position: 400% }
+        }
+
+        .links {
+            margin-top: 30px;
+            font-size: 1.2rem;
+        }
+
+        .links a {
+            display: block;
+            margin: 10px 0;
+            color: #E1306C;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .links a:hover {
+            color: white;
+        }
+
+        .links i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Coming Soon</h1>
+
+    <div class="links">
+        <a href="https://instagram.com/virustesla" target="_blank">
+            <i class="fa-brands fa-instagram"></i> @virustesla
+        </a>
+
+        <a href="mailto:hellovirustesla@gmail.com">
+            <i class="fa-solid fa-envelope"></i> hellovirustesla@gmail.com
+        </a>
+    </div>
+
+</body>
+</html>
