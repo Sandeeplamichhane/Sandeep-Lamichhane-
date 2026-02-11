@@ -11,14 +11,14 @@
         body {
             margin: 0;
             height: 100vh;
+            background: #0f0f0f;
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #0f0f0f;
-            font-family: Arial, sans-serif;
+            color: white;
             overflow: hidden;
-            text-align: center;
         }
 
         h1 {
@@ -37,25 +37,26 @@
             100% { background-position: 400% }
         }
 
-        .links {
-            margin-top: 30px;
-            font-size: 1.2rem;
+        .footer-links {
+            position: absolute;
+            bottom: 25px;
+            text-align: center;
         }
 
-        .links a {
-            display: block;
-            margin: 10px 0;
-            color: #E1306C;
+        .footer-links a {
+            margin: 0 15px;
             text-decoration: none;
+            color: #E1306C;
+            font-size: 1.1rem;
             transition: 0.3s;
         }
 
-        .links a:hover {
+        .footer-links a:hover {
             color: white;
         }
 
-        .links i {
-            margin-right: 8px;
+        .footer-links i {
+            margin-right: 6px;
         }
     </style>
 </head>
@@ -64,13 +65,13 @@
 
     <h1>Coming Soon</h1>
 
-    <div class="links">
+    <div class="footer-links">
         <a href="https://instagram.com/virustesla" target="_blank">
             <i class="fa-brands fa-instagram"></i> @virustesla
         </a>
 
         <a href="mailto:hellovirustesla@gmail.com">
-            <i class="fa-solid fa-envelope"></i> hellovirustesla@gmail.com
+            <i class="fa-solid fa-envelope"></i> Email Me
         </a>
     </div>
 
